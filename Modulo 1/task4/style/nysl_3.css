@@ -1,0 +1,337 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*Style*/
+body {
+  background-color: #00112c;
+}
+
+/*Header*/
+.toptitle{
+  position: relative;
+  font-size: 70px;
+  color: snow;
+  font-weight: 700;
+  font-family: cursive;
+  padding: 20px;
+  color: #FCFCFC;
+  text-align: right;
+  
+}
+
+/*Imagen Banner*/
+.banner{
+  border-style: solid;
+  border-color: #0B2E59;
+  border-top-width: 5px;
+  border-top-width: 5px;
+  border-left-width: 20px;
+  border-right-width: 20px;
+}
+.banner img{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  border-radius: 60px;
+}
+
+header {
+	background-color: #0B2E59;
+}
+header h2{
+  color: snow;
+  background-color: #0abf53; /*green;*/
+  overflow: hidden;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  font-family: cursive;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*Menu*/
+header ul {
+  list-style-type: none;
+
+}
+header ul li {
+  float: right;
+  border-style: solid;
+  border-color: #00112c;
+  border-width: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 10px;
+  overflow: hidden; /*desbordamiento oculto*/
+  background-color: #0EC433;
+}
+header ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 20px;
+}
+.active {
+  background-color: #e4002b;
+  border-radius: 10px;
+}
+
+/*Logo*/
+.imglogo{
+  top: 480px;
+  float: left;
+  width: 150px;
+  height: auto;
+  margin-left: 40px;
+  position: absolute;
+}
+
+/*section*/
+section {
+  color:white;
+  position: relative;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 6%;
+}
+section .boxdate {
+  margin: 50px;
+}
+section div .date{
+  margin: 20px;
+  padding-top: 5px;
+  padding-left: 60px;
+  color: antiquewhite;
+  font-style: italic;
+}
+section div .bodytext{
+  margin: 5px;
+  padding-left: 100px;
+  color: antiquewhite;
+}
+.text{
+  color: white;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 70px;
+}
+section h3{
+  color: antiquewhite;
+  font-size: 20px;
+  font-weight: 700;
+  }
+
+
+/*Listar*/
+.lista{
+  color: antiquewhite;
+}
+.lista h4{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: large;
+}
+.lista ul{
+  list-style-type: disc;
+  margin-left: 4%;
+}
+.lista ol {
+  list-style-type: decimal;
+  margin-left: 4%;
+}
+.lista .letter {
+  list-style-type: lower-latin;
+}
+
+.lista .number {
+  list-style-type: decimal;
+}
+
+.lista ul li .circle {
+  list-style-type: circle;
+}
+.letterbold {
+  font-weight: 700;
+}
+
+/*Tablas*/
+.tables {
+  color: white;
+}
+.tables h4{
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 25px;
+}
+.tables .textitalic{
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 15px;
+}
+.tables table{
+  margin: auto;
+  padding: 20px 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+.tables th{
+  font-weight: 700; /*negrita*/
+  text-decoration: underline;
+  font-size: large; 
+  background-color: darkgreen;
+}
+.tables th, td{
+  padding: 10px 50px;/* top-bot, left right */
+
+  text-align: center;
+}
+
+.table1 tr th{
+  border: 1px solid green;
+  border-collapse: collapse;
+  width: 150px;
+}
+
+.table1 tr td{
+  border: 1px solid green;
+  border-collapse: collapse;
+  width: 150px;
+}
+
+.table1 tr:nth-child(even){
+  background-color: dimgray;
+}
+
+.tables .location{
+  margin-bottom: 20px;
+}
+
+.tables .location .locationtext{
+  display: inline-block;
+  width: 43%;
+  padding: 5px;
+}
+
+.tables .location .locationmap{
+  display: inline-block;
+  float: right;
+  padding: 5px 15px;
+}
+
+footer {
+  color: white;
+  padding: 10px;
+  margin: 20px 10px;
+  border: 3px solid gray;
+}
+footer p{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+footer li{
+  display: inline;
+  padding: 10px 150px 10px 5px; /*top rigth bot left*/
+}
+.letterblack{
+  font-weight: 700;
+  font-size: large;
+}
+
+/*registration*/
+
+fieldset { 
+  display: block;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px solid;
+  border-color: gainsboro;
+}
+
+label, input {
+  margin: 5px 10px;
+  display: inline-block;
+}
+
+.blocklavelinput {
+  display: block;
+  margin: 10px 20px;
+  text-align: center;
+}
+
+section fieldset h6, select {
+   display: inline-block;
+   padding: 10px 20px;
+}
+section fieldset{
+   text-align: center;
+   }
+.buttom {
+  float: right;
+  margin-right: 20px;
+}
