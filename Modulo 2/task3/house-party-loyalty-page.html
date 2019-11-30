@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>senate-loyalty</title>
+		<link rel="stylesheet" href="Style/style.css">
+
+		<!-- Required meta tags -->   
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<!--Libreria icons-->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 
+	</head>
+    
+    <body onload="tableStadistics(), tableLeastLoyal(), tableMostLoyal()">
+			<header>
+				<div class="container">
+					<div class="row">
+						<div class="col-6">
+							<img src="Img/logo.png" class="img-fluid"  alt="logo">
+						</div>
+						<div class="col-6 my-auto">
+							<a id="mail" class="float-right" href="mailto:ingo@tpgif.net"><i class="far fa-envelope"></i>  ingo@tpgif.net</a>
+						</div>
+					</div>
+					<div class="col-12">
+						<ul class="nav nav-tabs"> 
+							<li class="nav-item">    
+									<a class="nav-link" href="home.html">Home</a>  
+							</li>
+							<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Congress 113 </a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="senate-data.html">Senate</a>
+										<a class="dropdown-item" href="house-data.html">House</a>
+									</div>  
+							</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Attendance </a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="senate-attendance-page.html">Senate</a>
+								<a class="dropdown-item" href="house-attendance-page.html">House</a>
+							</div>  
+						</li>   
+	
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty </a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="senate-party-loyalty-page.html">Senate</a>
+								<a class="dropdown-item disabled" href="#">House</a>
+							</div>  
+						</li>                
+						</ul>
+					</div>  
+				</div>
+			</header>
+<br>
+		<section>
+			<div class="container">
+				<div class="row">	
+					<div class="col-md-6">
+					<h2>Party Loyalty</h2>
+					<p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+					</div>	
+					<div class="col-md-6">											
+					<h2>House at a glance</h2>
+					<table id="dataStadistics" class="table table-bordered">	</table>
+					</div>					
+			</div>
+
+			<br>
+
+			<div class="row">
+			<div class="col-md-6">
+				<h2>Least Loyal (Bottom 10% of Party)</h2>
+				<table class="table table-bordered" id="tableLeastLoyal"> </table>
+
+				</div>
+			
+				<div class="col-md-6">
+				<h2>Most Loyal (Top 10% of Party)</h2>
+				<table id="tableMostLoyal" class="table table-bordered"> </table>
+				</div>
+			</div>
+		</div>				
+	</section>
+			
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script src="JS/pro-congress-113-house.js"></script> 	
+	<script src="JS/stadistics.js"></script>
+	<script src="JS/main.js"></script>				
+</body>
+</html>
