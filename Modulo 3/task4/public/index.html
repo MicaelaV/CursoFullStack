@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYSL</title>
+    <!-- Librerias CSS-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Libreria icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Librerias CSS--> 
+    <link rel="stylesheet" href="css/main.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700&display=swap" rel="stylesheet">
+    <!--IOS-->
+    <!--Icono-->
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/logo.png"><!--archivo terminen con -precomposed.png--> 
+    <!--Android-->
+    <link rel="shortcut icon" sizes="196x196" href="img/logo.png">
+    <!--Independiente-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>    
+  <body>
+    <!-- Login/Register -->
+    <section id="page-splash">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>Login</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container detailsregister">
+        <div class="row">
+            <div>
+              <button id="sign-in-button" class="btn btn-outline-success">
+              <i class="fas fa-user fa-1x"></i> Sign in with Google</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <button id="loginfacebook" class="btn btn-outline-success"><i class="fas fa-user fa-1x"></i> Sign in with Facebook</button>  	
+        </div>
+      </div>
+    </section>
+
+  	<header>
+      <nav>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-2 col-sm-1 my-auto">  					
+              <i class="fas fa-filter fa-2x nav-btn color"></i>
+              <i class="fas fa-arrow-left nav-btn color"></i>
+            </div>
+            <div class="col-8 col-sm-4 offset-sm-3 my-auto img-fluid text-center">
+              <img class="img-logo" src="img/logo.png">
+            </div>
+            <div class="col-2 col-sm-1 offset-sm-3 my-auto">
+              <a href="" class="color"><i class="fas fa-bars fa-2x nav-btn"></i></a>
+            </div>  				  				
+          </div>  			
+        </div>
+      </nav>  		
+    </header>
+
+    <!-- Game Details -->
+    <section class="container-fluid game-details" id="game-details">
+      <div class="row">
+        <div class="offset-2 offset-sm-4">
+          <h1>Next Matches</h1>
+        </div>          
+        <div class="container-fluid schedule col-sm-6" id="game-one">
+          <div class="row justify-content-center">
+          <h6 class="color">Week 01</h6>
+        </div>
+        <div class="container-fluid">
+          <div class="match-details">
+            <div class="row justify-content-around">
+            <img class="img-fluid my-auto col-5" src="img/team1.png" alt="shield 1">
+            <span class="color my-auto col-2">vs</span>
+            <img class="img-fluid my-auto col-5" src="img/team2.png" alt="shield 2">
+            </div>				
+          </div>
+          <div class="row justify-content-center">
+            <div class="icons">
+              <div class="row time">
+                <i class="far fa-clock icon-clock"></i>
+                <p> 9 am</p>
+              </div>
+              <i class="fas fa-map-marker-alt fa-1x icon-map"></i>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+      <div class="row">
+          <div class="container-fluid col-sm-6 schedule" id="game-two"> 
+            <div class="row justify-content-center">
+              <h6 class="color">Week 01</h6>
+            </div>
+            <div class="container-fluid">            
+            <div class="match-details">
+              <img class="img-fluid my-auto col-5" src="img/team3.png" alt="shield 3">
+              <span class="color my-auto col-2">vs</span>
+              <img class="img-fluid my-auto col-5" src="img/team4.png" alt="shield 4">				
+            </div>
+            <div class="row justify-content-center">
+              <div class="icons">
+                <div class="row time">
+                  <i class="far fa-clock icon-list icon-clock"></i>
+                  <p>11 am</p>
+                </div>
+                <i class="fas fa-map-marker-alt fa-1x icon-map"></i>
+              </div>
+            </div>
+            </div>    
+          </div>
+        </div>
+    </section>
+    <!-- MATCH ONE-->
+      <section class="container-fluid game-detail col-sm-6 offset-sm-6" id="match-one">
+        <div class="row">
+            <div class="details">
+                <h6 class="color hide">Game 1</h6>
+                <div class="match-details hide">
+                    <img src="img/team1.png" alt="escudo 1">
+                    <span class="color">vs</span>
+                    <img src="img/team2.png" alt="escudo 2">
+                </div>
+                <p><span class="color">Date:</span> September 01</p>
+                <p class="hour"><span class="color">Hour:</span> 09:00am</p>
+            </div>
+            <!--Map section-->
+            <div class="location">
+                <p><span class="color">Location:</span> AJ Katzenmaier Elementary 24 W. Walton St., Chicago, IL 60610</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261536!2d-87.63123908515084!3d41.90029637200492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+EE.+UU.!5e0!3m2!1ses-419!2sar!4v1562537209381!5m2!1ses-419!2sar" width="90%" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            </div>
+        </div>
+    </section>
+    <!--MATCH TWO-->
+    <section class="container-fluid game-detail col-sm-6 offset-sm-6" id="match-two">
+			<div class="row">
+				<div class="details">
+					<h6 class="color hide">Game 1</h6>
+					<div class="match-details hide">
+						<img src="img/team3.png" alt="escudo 1">
+						<span class="color">vs</span>
+						<img src="img/team4.png" alt="escudo 2">
+					</div>
+					<p><span class="color">Date:</span> September 01</p>
+					<p class="hour"><span class="color">Hour:</span> 11:00am</p>
+				</div>
+				<!--Map section-->
+				<div class="location">
+					<p><span class="color">Location:</span> 1734 N Orleans St Chicago, IL 60614 EE. UU.</p>
+					<td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674531!2d-87.64002798518399!3d41.913806271159046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1556290975456!5m2!1ses!2sar" width="90%" frameborder="0" style="border:0" allowfullscreen></iframe></td>
+				</div>
+			</div>
+    </section>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.2.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.2.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.2.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.2.4/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/taskfour.js"></script>
+    <script src="js/main.js"></script>
+	</body>
+</html>

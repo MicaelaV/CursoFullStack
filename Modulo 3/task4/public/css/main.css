@@ -1,0 +1,173 @@
+/** Colors **/
+:root{
+    --blue: #021a22;
+    --green:#a4ff4a;
+    --gray:#d3d2d3;
+    --red:#cc2936;
+    --black:#131313;
+}
+
+/** Main styles**/
+body{
+    background-color: var(--blue);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+.color{
+    color: var(--green);
+    font-weight: 700;
+}
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+/**Header**/
+header nav{
+    color: var(--green);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 5% auto;
+    width: 90%;
+}
+.img-logo{
+    margin-top: 2.5%;
+    width: 30%;
+}
+.nav-btn{
+    font-size: 1.8em;
+}
+/** Game Schedule **/
+.schedule{
+    background-color: rgba(255,255,255,0.1);
+    border: 1.5px solid var(--red);
+    border-radius: 15px;
+    padding-top: 5%;
+    margin: 7.5% 0;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    width: 80%;
+}
+.icon-map{
+    color:#BA0E01;
+    font-size: 20px;
+}
+.time{
+    align-content: center;
+}
+.icon-clock{
+    margin-top: 5%;
+}
+.time p{
+    padding-left: 5%;
+    font-weight: 300
+}
+
+/** Details **/
+.game-details{
+    width: 95%;
+    margin: 5% auto;
+}
+.details{ 
+    border: 1.5px solid var(--red);
+    border-bottom: 1px;
+    border-radius: 15px 15px 0 0;
+    margin: 0% auto;
+    width: 95%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    background-color: rgba(255,255,255,0.1);
+}
+.details p{
+    margin: 2px;
+    font-weight: 300;
+}
+.match-details{
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
+    width: 95%;
+}
+.match-details img{
+    margin: 5% 0;
+    width: 40%;
+}
+.match-details span{
+    font-size: 16px;
+}
+.location{
+    border: 1.5px solid var(--red);
+    border-radius: 0 0 15px 15px;
+    align-items: center;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: 0% auto;
+    padding-bottom: 2.5%;
+    background-color: rgba(255,255,255,0.1);
+}
+.location p{
+    text-align: center;
+    margin: 2%;
+    font-weight: 300;
+}
+.fa-arrow-left{
+    display: none;  
+}
+
+#match-two, #match-one{
+    display: none;
+}
+
+.detailsregister{ 
+    border: 1.5px solid var(--red);
+    border-radius: 15px;
+    margin: 0% auto;
+    width: 95%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*** Querys ***/
+@media only screen and (min-width: 300px) and (orientation: landscape){
+    header nav, .game-details{
+        margin: 1% auto;
+    }
+    .schedule{
+        padding-top: 2%;
+        margin: 0.5% 0 3% 0;
+    }
+    .schedule:focus-within{
+        border: 1.5px solid #a4ff4a;
+        border-radius: 15px;
+    }
+    #match-one, #match-two{
+        position: absolute;
+        top: 32.8%;
+    }
+    .hour{
+        display: none;
+    }
+    .details h6{
+        margin: 0;
+    }
+    .hide{
+        display: none;
+    }
+}
