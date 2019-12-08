@@ -90,18 +90,18 @@ public class SalvoController {
         Map<String, Object> hits = new LinkedHashMap<>();
 
         //task5 m5
-        hits.put("self", getHits(gamePlayer, gamePlayer.getOpponent()));
-        hits.put("opponent", getHits(gamePlayer.getOpponent(), gamePlayer));
+        hits.put("self", getHits(gamePlayer, gamePlayer.getOpponent()));//task5
+        hits.put("opponent", getHits(gamePlayer.getOpponent(), gamePlayer));//task5
         //
 
-        //hits.put("self", new ArrayList<>());
-        //hits.put("opponent", new ArrayList<>());
+        //hits.put("self", new ArrayList<>()); // task4
+        //hits.put("opponent", new ArrayList<>()); // task4
 
 
         dto.put("id", gamePlayer.getGame().getId());
         dto.put("created", gamePlayer.getGame().getCreationDate());
-        /*dto.put("gameState", "PLACESHIPS");*/
-        dto.put("gameState", getState(gamePlayer, opponent));
+        /*dto.put("gameState", "PLACESHIPS");*/ // task4
+        dto.put("gameState", getState(gamePlayer, opponent));//task5
         dto.put("gamePlayers", gamePlayer.getGame().getGamePlayers()
                 .stream()
                 .map(gamePlayer1 -> gamePlayer1.makeGamePlayerDTO())
@@ -231,6 +231,7 @@ public class SalvoController {
         });
         return new ResponseEntity<>(makeMap("OK", "Ship Create!"), HttpStatus.CREATED);
     }
+
     //Task4 m5
     //método de controlador de fondo que pueda recibir un objeto salvo, que consiste en un turno y una lista de ubicaciones
     @RequestMapping(value = "/games/players/{gpid}/salvoes", method = RequestMethod.POST)
@@ -268,15 +269,19 @@ public class SalvoController {
     }
 
     public String getState(GamePlayer gamePlayer, GamePlayer  opponent){
+        //Verifica si lista de barcos esta vacia
         if(gamePlayer.getShips().isEmpty()){
             return "PLACESHIPS";
         }
+        //Verifica si solo es un jugador
         if(gamePlayer.getGame().getGamePlayers().size() == 1){
             return "WAITINGFOROPP";
         }
+        //estado "Play" task4
         if(gamePlayer.getGame().getGamePlayers().size() == 2 && gamePlayer.getId() < opponent.getId()){
             return "PLAY";
         }
+        //Inicio de Juego
         if(gamePlayer.getGame().getGamePlayers().size() == 2 && gamePlayer.getId() > opponent.getId()){
             return "WAIT";
         }
@@ -284,17 +289,19 @@ public class SalvoController {
     }
 
 
-    //Va en GamePlayer Model
+    //Va en Models -> GamePlayer
     /*public gamePlayer getOpponent(){
         return this.getGame().getGamePlayer().stream().filter(gamePlayer -> gamePlayer.getId()) != this.getId())
                 .findFirstId()
                 .orElse(new GamePlayer);
     }*/
 
+    //calcular el daño realizado
     private List<Map> getHits(GamePlayer self, GamePlayer opponent) {
 
-        //donde va el for
         List<Map> hits = new ArrayList<>();
+
+
         return hits;
     }
 

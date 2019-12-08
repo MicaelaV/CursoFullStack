@@ -17,7 +17,13 @@ public class GamePlayer {
     private Date joinDate;
 
     public GamePlayer(){
+
         this.joinDate = new Date();
+        //tas5 m5
+        //instacion listas (ships y salvoes)
+        this.ships = new HashSet<>();
+        this.salvos = new ArrayList<>();
+
     }
 
     /*conexion entre tablas*/
@@ -34,7 +40,7 @@ public class GamePlayer {
      private Set<Ship> ships;
 
     @OneToMany(mappedBy = "gamePlayer", fetch = FetchType.EAGER)
-    private Set<Salvo> salvos;
+    private List<Salvo> salvos;
 
     public GamePlayer(Player player, Game game) {
         this.joinDate = new Date();
@@ -51,11 +57,11 @@ public class GamePlayer {
 
     //Getter y Setter
 
-    public Set<Salvo> getSalvos() {
+    public List<Salvo> getSalvos() {
         return salvos;
     }
 
-    public void setSalvos(Set<Salvo> salvos) {
+    public void setSalvos(List<Salvo> salvos) {
         this.salvos = salvos;
     }
 
@@ -97,6 +103,8 @@ public class GamePlayer {
         this.game = game;
     }
 
+    //task5 m5
+    //Obtien gamePLayer de ese Game y verifica el id, devuelve el gamePLayer que di. Si no lo encuentra devuelve un New gamePlayer
     public GamePlayer getOpponent() {
         return this.getGame().getGamePlayers().stream()
                 .filter(gamePlayer -> gamePlayer.getId() != this.getId())
