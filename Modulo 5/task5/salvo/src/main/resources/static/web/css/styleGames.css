@@ -1,7 +1,9 @@
 body {
-    background: url(../img/back2.jpg);
+    background: url(../img/back2.png);
     font-family: "Arial Black", Gadget, sans-serif;
     background-size: cover;
+    background-attachment: fixed;
+    overflow: auto;
 }
 
 .bannerTitle {
@@ -369,11 +371,11 @@ button:focus {
 
 .yellow500 {
     font-weight: 600;
-    color: #ffc107;
+    color: #ff8000;
 }
 
 #scoreBoard > tbody > tr:first-child > td {
-    color: #ffc107;
+    color: #ff8000;
 }
 
 #createGame {
@@ -522,4 +524,6 @@ h3{
     color: white;
 }
 
-
+.styleTable{
+    font-family: Arial, Helvetica, sans-serif;
+}

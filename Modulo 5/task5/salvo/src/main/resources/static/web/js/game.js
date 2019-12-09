@@ -142,10 +142,23 @@ function refreshGameView(_url) {
                     '                <div class="droppable salvoCharger caught--it" id="salvoout3"><div class="draggable" id="salvo3"></div></div>\n' +
                     '                <div class="droppable salvoCharger caught--it" id="salvoout4"><div class="draggable" id="salvo4"></div></div>\n' +
                     '                <div class="droppable salvoCharger caught--it" id="salvoout5"><div class="draggable" id="salvo5"></div></div>\n' +
-                    '                <div class="textCenter"><button class="btn btn-warning" id="postSalvo">Fire Salvo!</button></div>\n' +
+                    '                <div class="textCenter"><button class="btn btn-outline-danger" id="postSalvo">Fire!</button></div>\n' +
                     '            </div>');
 
                 resetSalvoCellIds();
+
+/*   $('#salvoBlock').html('<div class="drag-zone">\n' +
+                      '                <ul>'+
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout1"><div class="draggable" id="salvo1"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout2"><div class="draggable" id="salvo2"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout3"><div class="draggable" id="salvo3"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout4"><div class="draggable" id="salvo4"></div></div></li>\n' +
+                      '                <li><div class="droppable salvoCharger caught--it" id="salvoout5"><div class="draggable" id="salvo5"></div></div></li>\n' +
+                      '                <li><div class="textCenter"><button class="btn btn-warning" id="postSalvo">Fire Salvo!</button></div></li>\n' +
+                      '                </ul>+
+                      '            </div>');
+
+                  resetSalvoCellIds();*/
 
                 $('#postSalvo').click(function () {
                     makeSalvoJSON();
@@ -184,21 +197,22 @@ function showSelf (gamePlayerData) {
             you = gamePlayer.player.email;
             youID = gamePlayer.player.id;
         } else {
-            viewer = gamePlayer.player.email;
+            viewer = gamePlayer.player.email  + '<span class="gridTopLabel"> Player Ships</span>';
             $('#OpponentPlayerName').removeClass('waitingPlayer');
         }
     });
 
     if (viewer === "") {
-        viewer = "Waiting for player!";
+        //viewer = "Waiting for player!";
+        viewer = '<img src="img/waitingplayer.png"></img>';
         $('#OpponentPlayerName').addClass('waitingPlayer');
     }
 
     let DateCreated = new Date(gamePlayerData.created);
-    DateCreated = DateCreated.getMonth() + 1 + "/" + DateCreated.getDate() + " " + DateCreated.getHours() + ":" + DateCreated.getMinutes();
-    $('#gamePlayerDetails').html('<span class="labelGame">Game ID: </span><span class="labelGameBig">' + gamePlayerData.id + '</span><span class="labelGame"> Created: </span><span class="labelGameBig">' + DateCreated + '</span>');
+    /*DateCreated = DateCreated.getMonth() + 1 + " / " + DateCreated.getDate() + " " + DateCreated.getHours() + ":" + DateCreated.getMinutes() + ":" + DateCreated.getSeconds();
+    $('#gamePlayerDetails').html('<span class="labelGame">Game: </span><span class="labelGameBig">' + gamePlayerData.id + '</span><span class="labelGame"> Created: </span><span class="labelGameBig">' + DateCreated + '</span>');*/
     $('#currentPlayerName').text(you);
-    $('#OpponentPlayerName').text(viewer);
+    $('#OpponentPlayerName').html(viewer);
 
 
     gamePlayerData.ships.forEach(function(ship) {
