@@ -232,6 +232,7 @@ body {
 
 .backShipPlacement {
     background-image: url(../img/backshipplacement.gif);
+    /*filter: grayscale(25%);*/
 }
 .title {
     text-align: center;
@@ -536,6 +537,6 @@ button:focus {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 3px solid black;
+  border-top: 3px solid #fac105;
   border-radius: 5px;
 }

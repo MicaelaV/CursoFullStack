@@ -375,7 +375,7 @@ button:focus {
 }
 
 #scoreBoard > tbody > tr:first-child > td {
-    color: #ff8000;
+    color: darkorange;
 }
 
 #createGame {
@@ -526,4 +526,5 @@ h3{
 
 .styleTable{
     font-family: Arial, Helvetica, sans-serif;
+    color: #72c1ef;
 }

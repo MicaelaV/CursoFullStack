@@ -199,10 +199,10 @@ function showGamesTable(gamesData) {
                     $('<td>' + gamesData[i].gamePlayers[j].player.email + '</td>').appendTo(row);
                 }
                 if (gamesData[i].gamePlayers.length == 1 && (data.player == "Guest" || data.player.id == gamesData[i].gamePlayers[j].player.id)) {
-                    $('<td>' + gamesData[i].gamePlayers[0].player.email + '</td><td class="yellow500">WAITING FOR PLAYER</td>').appendTo(row);
+                    $('<td>' + gamesData[i].gamePlayers[0].player.email + '</td><td><img src="img/waitingplayer.png"></img></td>').appendTo(row);/*</td><td class="yellow500">WAITING FOR PLAYER</td>*/
                 }
                 if (gamesData[i].gamePlayers.length == 1 && data.player.id != null && data.player.id != gamesData[i].gamePlayers[j].player.id) {
-                    $('<td>' + gamesData[i].gamePlayers[0].player.email + '</td><td class="yellow500">WAITING FOR PLAYER</td>').appendTo(row);
+                    $('<td>' + gamesData[i].gamePlayers[0].player.email + '</td><td><img src="img/waitingplayer.png"></img></td>').appendTo(row);
                     joinButtonHtml = '<td class="textCenter"><button class="joinGameButton btn btn-outline-danger" data-gameid=' + '"' + gamesData[i].id + '"' + '>JOIN GAME</button></td>';
 
                 }
