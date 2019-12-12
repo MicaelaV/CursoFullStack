@@ -189,15 +189,17 @@ function refreshGameView(_url) {
 
 function showSelf (gamePlayerData) {
     you = "";
+    youTag = "";
     viewer = "";
     youID = "";
 
     gamePlayerData.gamePlayers.forEach(function(gamePlayer) {
         if (gamePlayer.id == getParameterByName("gp")) {
             you = gamePlayer.player.email;
+            youTag = gamePlayer.player.email  + '<span class="gridTopLabel"> - Player Ships</span>';;
             youID = gamePlayer.player.id;
         } else {
-            viewer = gamePlayer.player.email  + '<span class="gridTopLabel"> Player Ships</span>';
+            viewer = gamePlayer.player.email  + '<span class="gridTopLabel"> - Player Ships</span>';
             $('#OpponentPlayerName').removeClass('waitingPlayer');
         }
     });
@@ -211,7 +213,7 @@ function showSelf (gamePlayerData) {
     let DateCreated = new Date(gamePlayerData.created);
     /*DateCreated = DateCreated.getMonth() + 1 + " / " + DateCreated.getDate() + " " + DateCreated.getHours() + ":" + DateCreated.getMinutes() + ":" + DateCreated.getSeconds();
     $('#gamePlayerDetails').html('<span class="labelGame">Game: </span><span class="labelGameBig">' + gamePlayerData.id + '</span><span class="labelGame"> Created: </span><span class="labelGameBig">' + DateCreated + '</span>');*/
-    $('#currentPlayerName').text(you);
+    $('#currentPlayerName').html(youTag);
     $('#OpponentPlayerName').html(viewer);
 
 

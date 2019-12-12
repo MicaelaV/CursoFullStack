@@ -70,16 +70,16 @@ body {
 
 #loginFailed, #errorSignup, #errorShips, #errorSalvo {
     display: none;
-    background-color: indianred;
+/*    background-color: indianred;
     color: white;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 #signupSuccess {
     display: none;
-    background-color: darkorange;
+    /*background-color: darkorange;
     color: black;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 #errorMsg {
@@ -88,9 +88,9 @@ body {
 
 #loginSuccess, #logoutSuccess, #gameCreatedSuccess, #gameJoinedSuccess, #okShips, #okSalvo {
     display: none;
-    background-color: forestgreen;
+/*    background-color: forestgreen;
     color: white;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 #gamesList {
@@ -113,6 +113,10 @@ body {
 #currentPlayerName {
 
 }
+
+#currentPlayer{
+    color: #04cccc;
+ }
 
 .shipCell {
     /*background-color: yellowgreen;*/

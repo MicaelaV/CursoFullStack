@@ -301,7 +301,7 @@ public class SalvoController {
 
         List<Map> hits = new ArrayList<>();
 
-       /* Integer carrierDamage = 0;
+        Integer carrierDamage = 0;
         Integer battleshipDamage = 0;
         Integer submarineDamage = 0;
         Integer destroyerDamage = 0;
@@ -378,7 +378,7 @@ public class SalvoController {
             hitsMapPerTurn.put("missed", missedShots);
             hits.add(hitsMapPerTurn);
 
-        }*/
+        }
 
 
         return hits;

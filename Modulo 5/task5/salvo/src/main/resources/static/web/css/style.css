@@ -75,9 +75,9 @@ body {
 
 #loginFailed, #errorSignup, #errorShips, #errorSalvo {
     display: none;
-    background-color: indianred;
+/*    background-color: indianred;
     color: white;
-    padding: 10px;
+    padding: 10px;*/
 }
 
 #signupSuccess {
@@ -91,11 +91,15 @@ body {
     display: none;
 }
 
-#loginSuccess, #logoutSuccess, #gameCreatedSuccess, #gameJoinedSuccess, #okShips, #okSalvo {
+#loginSuccess, #gameCreatedSuccess, #gameJoinedSuccess, #okShips, #okSalvo {
     display: none;
-    background-color: forestgreen;
+    /*background-color: forestgreen;
     color: white;
-    padding: 10px;
+    padding: 10px;*/
+}
+
+#logoutSuccess{
+    display: none;
 }
 
 #gamesList {
@@ -525,7 +529,7 @@ button:focus {
 
 .player1{
     background-color: rgba(0, 0, 0, 0.5);
-    color: orange;
+    color: #04cccc;
 }
 
 .player2{

@@ -41,11 +41,21 @@
 
     </div>
     <hr class="new5">
-    <h3 id="logoutSuccess" class="textCenter">Logout Successful!</h3>
-    <div id="errorMsg" class="alert alert-danger textCenter"></div>
-    <!--<div id="gameStateBlock" class="textCenter"></div>-->
-    <h3 id="okSalvo" class="textCenter"></h3>
-    <h3 id="errorSalvo" class="textCenter"></h3>
+    <div class="alert alert-success" id="logoutSuccess">
+        <h3 class="alert-heading">Logout Successful!</h3>
+    </div>
+    <div class="alert alert-danger" id="errorMsg"></div>
+
+    <!--<div  class="textCenter"></div>--><!--id="gameStateBlock"-->
+    <div class="alert alert-success" id="okSalvo">
+        <h2 class="alert-heading"></h2>
+    </div>
+    <!--<h3  class="textCenter"></h3>id="okSalvo"-->
+
+    <div class="alert alert-danger" id="errorSalvo">
+        <h2 class="alert-heading"></h2>
+    </div>
+    <!--<h3  class="textCenter"></h3>--><!--id="errorSalvo"-->
 
     <!-- acomodar los barcos-->
     <div id="placingShipsBoard">
@@ -70,7 +80,9 @@
         <div class="col-sm-12 textCenter">
             <div class="placeshipsInstructions">Place your ships by dragging and dropping them onto desired positions.<br>You can rotate ships by clicking <img class="rotateIcon" src="img/rotatewhite.png"> icon on every ship.<br>When you finish positioning click on PLACE SHIPS button
                 to begin the battle!</div>
-            <h3 id="okShips" class="textCenter"></h3>
+            <div class="alert alert-warning" id="okShips">
+                <h3 class="alert-heading"></h3>
+             </div>
             <h3 id="errorShips" class="textCenter"></h3>
             <button class="btn btn-outline-warning" id="save-grid">PLACE SHIPS!</button>
             <br>
@@ -82,14 +94,9 @@
             <div class="col-sm-6">
                 <div class="textCenter player1 rounded border border-warning">
                     <div class="row">
-                        <div class="col-6">
-                            <div class="float-right">
+                        <div class="col-12">
+                            <div class="text-center">
                                 <h4 id="currentPlayerName"></h4>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="float-left">
-                                <h4 class="gridTopLabel"> PLAYER SHIPS </h4>
                             </div>
                         </div>
                     </div>
