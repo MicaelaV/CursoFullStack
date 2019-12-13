@@ -142,10 +142,17 @@ body {
 }
 
 .hitCell {
-    background-image: url(../img/hit3.gif);
+    background-image: url(../img/hit3.png);
     background-size: cover;
     border-style: solid;
     border-color: white;
+}
+
+.hitCell2{
+        background-image: url(../img/hit.gif);
+        background-size: cover;
+        border-style: solid;
+        border-color: white;
 }
 
 .verticalCenterFlex {

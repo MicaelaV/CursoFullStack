@@ -22,7 +22,7 @@ public class GamePlayer {
         //tas5 m5
         //instacion listas (ships y salvoes)
         this.ships = new HashSet<>();
-        this.salvos = new ArrayList<>();
+        this.salvos = new HashSet<>();
 
     }
 
@@ -40,7 +40,7 @@ public class GamePlayer {
      private Set<Ship> ships;
 
     @OneToMany(mappedBy = "gamePlayer", fetch = FetchType.EAGER)
-    private List<Salvo> salvos;
+    private Set<Salvo> salvos;
 
     public GamePlayer(Player player, Game game) {
         this.joinDate = new Date();
@@ -57,11 +57,11 @@ public class GamePlayer {
 
     //Getter y Setter
 
-    public List<Salvo> getSalvos() {
+    public Set<Salvo> getSalvos() {
         return salvos;
     }
 
-    public void setSalvos(List<Salvo> salvos) {
+    public void setSalvos(Set<Salvo> salvos) {
         this.salvos = salvos;
     }
 

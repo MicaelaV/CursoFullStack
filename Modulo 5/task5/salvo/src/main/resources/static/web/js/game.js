@@ -69,7 +69,6 @@ function refreshGameView(_url) {
             // createTable(player2);
 
             $('#gameStateBlock').html('<span class="gameStateLabel">TURN: </span><span class="gameStateLabelBig">' + getTurn(gamePlayerData) + '</span><span class="gameStateLabel"> ACTION REQUIRED: </span><span class="gameStateLabelBig">' + gamePlayerData.gameState + '</span>');
-
             console.log("waitState: " + waitState);
 
             if (waitState === false) {
@@ -101,6 +100,8 @@ function refreshGameView(_url) {
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
                 console.log("yes you won");
+                game = '<img src="img/waitingplayer.png"></img>';
+                $('#gameStateBlock').html(game); //Imagen que diga You WON
             }
             if (gamePlayerData.gameState === "TIE"){
                 showSelf(gamePlayerData);
@@ -117,6 +118,7 @@ function refreshGameView(_url) {
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
                 console.log("OH YOU LOST");
+                $('#gameStateBlock').html(game); //Imagen que diga You WON
             }
             if (gamePlayerData.gameState === "WAIT"){
                 $('#battleGrids').show('puff', 'slow');
@@ -211,8 +213,8 @@ function showSelf (gamePlayerData) {
     }
 
     let DateCreated = new Date(gamePlayerData.created);
-    /*DateCreated = DateCreated.getMonth() + 1 + " / " + DateCreated.getDate() + " " + DateCreated.getHours() + ":" + DateCreated.getMinutes() + ":" + DateCreated.getSeconds();
-    $('#gamePlayerDetails').html('<span class="labelGame">Game: </span><span class="labelGameBig">' + gamePlayerData.id + '</span><span class="labelGame"> Created: </span><span class="labelGameBig">' + DateCreated + '</span>');*/
+    DateCreated = DateCreated.getMonth() + 1 + " / " + DateCreated.getDate() + " " + DateCreated.getHours() + ":" + DateCreated.getMinutes() + ":" + DateCreated.getSeconds();
+    $('#gamePlayerDetails').html('<span class="labelGame">Game: </span><span class="labelGameBig">' + gamePlayerData.id + '</span><span class="labelGame"> Created: </span><span class="labelGameBig">' + DateCreated + '</span>');
     $('#currentPlayerName').html(youTag);
     $('#OpponentPlayerName').html(viewer);
 
@@ -264,7 +266,7 @@ function showSelf (gamePlayerData) {
     gamePlayerData.hits.opponent.forEach(function(playTurn) {
         playTurn.hitLocations.forEach(function (hitCell) {
             cellID = "#" + hitCell;
-            $(cellID).addClass("hitCell");
+            $(cellID).addClass("hitCell2");
         });
     });
 }
