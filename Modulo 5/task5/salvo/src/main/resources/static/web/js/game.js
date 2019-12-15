@@ -100,7 +100,7 @@ function refreshGameView(_url) {
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
                 console.log("yes you won");
-                game = '<img src="img/waitingplayer.png"></img>';
+                game = '<img src="img/won.png"></img>';
                 $('#gameStateBlock').html(game); //Imagen que diga You WON
             }
             if (gamePlayerData.gameState === "TIE"){
@@ -118,6 +118,7 @@ function refreshGameView(_url) {
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
                 console.log("OH YOU LOST");
+                game = '<img src="img/lost.png"></img>';
                 $('#gameStateBlock').html(game); //Imagen que diga You WON
             }
             if (gamePlayerData.gameState === "WAIT"){
@@ -138,7 +139,7 @@ function refreshGameView(_url) {
                 makeGameRecordTable(gamePlayerData.hits.opponent, "gameRecordOppTable");
                 makeGameRecordTable(gamePlayerData.hits.self, "gameRecordSelfTable");
 
-                $('#salvoBlock').html('<div class="drag-zone">\n' +
+                $('#salvoBlock').html('<div class="drag-zone rounded border border-warning">\n' +
                     '                <div class="droppable salvoCharger caught--it" id="salvoout1"><div class="draggable" id="salvo1"></div></div>\n' +
                     '                <div class="droppable salvoCharger caught--it" id="salvoout2"><div class="draggable" id="salvo2"></div></div>\n' +
                     '                <div class="droppable salvoCharger caught--it" id="salvoout3"><div class="draggable" id="salvo3"></div></div>\n' +

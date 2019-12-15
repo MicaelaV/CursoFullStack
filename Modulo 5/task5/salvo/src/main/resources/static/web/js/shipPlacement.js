@@ -188,7 +188,7 @@ $('#grid1').on('change', function(event, items) {
 $('#grid1').on('dragstart', function(event, ui) {
     notMoved = $('#' + event.target.id + 'Position').text();
     $('.movingMsgBig').html("..." + event.target.id + "<br>is moving...");
-    $('#' + event.target.id + 'Position').text("waiting new position").addClass('movingShip');
+    $('#' + event.target.id + 'Position').text("New position").addClass('movingShip');
 
 });
 

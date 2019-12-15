@@ -15,85 +15,299 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="bannerTitle">
-        <div class="row verticalCenterFlex">
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <a href="games.html"><img class="bannerImage" src="img/titlebannersalvo.png"></a>
+    <div class="container-fluid">
+
+        <div class="bannerTitle">
+            <div class="row verticalCenterFlex">
+                    <div class="col-sm-6">
+                        <!--<div class="row">
+                            <div class="col-12 text-center">-->
+                                <a href="games.html"><img class="bannerImage img-fluid" src="img/titlebannersalvo.png"></a>
+                                <!--</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <div id="gamePlayerDetails" class="gameDetails blockInline"></div>
+                                </div>
+                            </div>-->
+                    </div>
+                    <div class="col-sm-6">
+                       <!-- <div class="row">
+                            <div class="col-12 text-center">-->
+                                <div class="blockInline">
+                                    <button id="logoutButton" class="btn btn-warning">Log out</button>
+                                </div>
+
+                            <!--</div>
+                        </div>-->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div id="gamePlayerDetails" class="gameDetails blockInline"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="blockInline"><button id="logoutButton" class="btn btn-warning">Log out</button></div>
-                    </div>
-                </div>
-            </div>
+            <hr class="new5">
+            <div  class="textCenter" id="gameStateBlock"></div>
+        </div>
+        <hr class="new5">
+
+        <div class="alert alert-success" id="logoutSuccess">
+            <h3 class="alert-heading">Logout Successful!</h3>
+        </div>
+
+        <div class="alert alert-danger" id="errorMsg"></div>
+
+        <div class="alert alert-success" id="okSalvo">
+            <h2 class="alert-heading"></h2>
+        </div>
+
+        <div class="alert alert-danger" id="errorSalvo">
+            <h2 class="alert-heading"></h2>
         </div>
 
     </div>
-    <hr class="new5">
-    <div class="alert alert-success" id="logoutSuccess">
-        <h3 class="alert-heading">Logout Successful!</h3>
-    </div>
-    <div class="alert alert-danger" id="errorMsg"></div>
 
-    <div  class="textCenter" id="gameStateBlock"></div>
-
-    <div class="alert alert-success" id="okSalvo">
-        <h2 class="alert-heading"></h2>
-    </div>
-    <!--<h3  class="textCenter"></h3>id="okSalvo"-->
-
-    <div class="alert alert-danger" id="errorSalvo">
-        <h2 class="alert-heading"></h2>
-    </div>
-    <!--<h3  class="textCenter"></h3>--><!--id="errorSalvo"-->
-
+    <div class="container-fluid">
     <!-- acomodar los barcos-->
+
     <div id="placingShipsBoard">
-        <div class="margin0auto">
+
+    <div class="margin0auto">
+        <div class="row">
+            <div class="col-12 col-md-6 text-center">
             <div class="blockInline">
                 <div id="gridShipsContainer" class="gridShips backShipPlacement">
                     <div class="grid-stack grid-stack-10" id="grid1">
                     </div>
                 </div>
             </div>
-            <div class="blockInline whiteColor">
-                <div class="shipTypeLabel">CARRIER <span class="shipPoslabel" id="carrierPosition"></span></div>
-                <div class="shipTypeLabel">BATTLESHIP <span class="shipPoslabel" id="battleshipPosition"></span></div>
-                <div class="shipTypeLabel">SUBMARINE <span class="shipPoslabel" id="submarinePosition"></span></div>
-                <div class="shipTypeLabel">DESTROYER <span class="shipPoslabel" id="destroyerPosition"></span></div>
-                <div class="shipTypeLabel">PATROL BOAT <span class="shipPoslabel" id="patrolboatPosition"></span></div>
-                <div class="movingMsgBig"></div>
+        </div>
+            <div class="d-none d-md-block col-md-6 text-center">
+                <div class="blockInline whiteColor text-center">
+                    <table>
+                        <tbody>
+                        <tr><div class="shipTypeLabel"><td><img src="img/nave1.png"><!--CARRIER--></td><td> - </td><td><span class="shipPoslabel" id="carrierPosition"></span></td></div></tr>
+                        <tr><div class="shipTypeLabel"><td><img src="img/nave2.png"><!--BATTLESHIP--> </td><td> - </td><td><span class="shipPoslabel" id="battleshipPosition"></span></td></div></tr>
+                        <tr><div class="shipTypeLabel"><td><img src="img/nave3.png"><!--SUBMARINE--></td><td> - </td><td><span class="shipPoslabel" id="submarinePosition"></span></td></div></tr>
+                        <tr><div class="shipTypeLabel"><td><img src="img/nave4.png"><!--DESTROYER--> </td><td> - </td><td><span class="shipPoslabel" id="destroyerPosition"></span></td></div></tr>
+                        <tr><div class="shipTypeLabel"><td><img src="img/nave5.png"><!--PATROL BOAT--></td><td> - </td><td><span class="shipPoslabel" id="patrolboatPosition"></span></td></div></tr>
+                        </tbody>
+                    </table>
+                    <div class="movingMsgBig"></div>
+                </div>
             </div>
         </div>
 
-
-        <div class="col-sm-12 textCenter">
-            <div class="placeshipsInstructions">Place your ships by dragging and dropping them onto desired positions.<br>You can rotate ships by clicking <img class="rotateIcon" src="img/rotatewhite.png"> icon on every ship.<br>When you finish positioning click on PLACE SHIPS button
-                to begin the battle!</div>
-            <div class="alert alert-warning" id="okShips">
-                <h3 class="alert-heading"></h3>
-             </div>
-            <h3 id="errorShips" class="textCenter"></h3>
-            <button class="btn btn-outline-warning" id="save-grid">PLACE SHIPS!</button>
-            <br>
+        <div class="row">
+            <div class="col-sm-12 textCenter">
+                <div class="placeshipsInstructions">
+                    Place your ships by dragging and dropping them onto desired positions.
+                    <br>
+                    You can rotate ships by clicking <img class="rotateIcon" src="img/rotatewhite.png"> icon on every ship.
+                    <br>
+                    When you finish positioning click on PLACE SHIPS button to begin the battle!
+                </div>
+                <div class="alert alert-warning" id="okShips">
+                    <h3 class="alert-heading"></h3>
+                 </div>
+                <h3 id="errorShips" class="textCenter"></h3>
+                <button class="btn btn-outline-warning" id="save-grid">PLACE SHIPS!</button>
+                <br>
+            </div>
         </div>
     </div>
+</div>
+
     <div id="battleGrids">
         <div class="row">
+
+            <!-- Grilla de barcos de Player2-->
+            <div class="col-sm-6">
+                <div class="m-2 textCenter player2 rounded border border-warning">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="textCenter">
+                                <h4 class="textCenter" id="OpponentPlayerName"></h4>
+                            </div>
+                        </div>
+                        <!--<div class="col-6">
+                            <div class="float-left">
+                                <h4 class="gridTopLabel"> Player Ships</h4>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+
+                <!--<div id="shipsLeftIconsOpp" class="textCenter">
+                    <span id="oppcarrierIcon"><img src="img/carrierafloat.png"></span>
+                    <span id="oppbattleshipIcon"><img src="img/battleshipafloat.png"></span>
+                    <span id="oppsubmarineIcon"><img src="img/submarineafloat.png"></span>
+                    <span id="oppdestoyerIcon"><img src="img/destroyerafloat.png"></span>
+                    <span id="opppatrolboatIcon"><img src="img/patrolboatafloat.png"></span>
+                </div>-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="divTable oppTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell"></div>
+                            <div class="divTableCell">1</div>
+                            <div class="divTableCell">2</div>
+                            <div class="divTableCell">3</div>
+                            <div class="divTableCell">4</div>
+                            <div class="divTableCell">5</div>
+                            <div class="divTableCell">6</div>
+                            <div class="divTableCell">7</div>
+                            <div class="divTableCell">8</div>
+                            <div class="divTableCell">9</div>
+                            <div class="divTableCell">10</div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">A</div>
+                            <div class="oppCell divTableCell droppable" id="A1"></div>
+                            <div class="oppCell divTableCell droppable" id="A2"></div>
+                            <div class="oppCell divTableCell droppable" id="A3"></div>
+                            <div class="oppCell divTableCell droppable" id="A4"></div>
+                            <div class="oppCell divTableCell droppable" id="A5"></div>
+                            <div class="oppCell divTableCell droppable" id="A6"></div>
+                            <div class="oppCell divTableCell droppable" id="A7"></div>
+                            <div class="oppCell divTableCell droppable" id="A8"></div>
+                            <div class="oppCell divTableCell droppable" id="A9"></div>
+                            <div class="oppCell divTableCell droppable" id="A10"></div>
+
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">B</div>
+                            <div class="oppCell divTableCell droppable" id="B1"></div>
+                            <div class="oppCell divTableCell droppable" id="B2"></div>
+                            <div class="oppCell divTableCell droppable" id="B3"></div>
+                            <div class="oppCell divTableCell droppable" id="B4"></div>
+                            <div class="oppCell divTableCell droppable" id="B5"></div>
+                            <div class="oppCell divTableCell droppable" id="B6"></div>
+                            <div class="oppCell divTableCell droppable" id="B7"></div>
+                            <div class="oppCell divTableCell droppable" id="B8"></div>
+                            <div class="oppCell divTableCell droppable" id="B9"></div>
+                            <div class="oppCell divTableCell droppable" id="B10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">C</div>
+                            <div class="oppCell divTableCell droppable" id="C1"></div>
+                            <div class="oppCell divTableCell droppable" id="C2"></div>
+                            <div class="oppCell divTableCell droppable" id="C3"></div>
+                            <div class="oppCell divTableCell droppable" id="C4"></div>
+                            <div class="oppCell divTableCell droppable" id="C5"></div>
+                            <div class="oppCell divTableCell droppable" id="C6"></div>
+                            <div class="oppCell divTableCell droppable" id="C7"></div>
+                            <div class="oppCell divTableCell droppable" id="C8"></div>
+                            <div class="oppCell divTableCell droppable" id="C9"></div>
+                            <div class="oppCell divTableCell droppable" id="C10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">D</div>
+                            <div class="oppCell divTableCell droppable" id="D1"></div>
+                            <div class="oppCell divTableCell droppable" id="D2"></div>
+                            <div class="oppCell divTableCell droppable" id="D3"></div>
+                            <div class="oppCell divTableCell droppable" id="D4"></div>
+                            <div class="oppCell divTableCell droppable" id="D5"></div>
+                            <div class="oppCell divTableCell droppable" id="D6"></div>
+                            <div class="oppCell divTableCell droppable" id="D7"></div>
+                            <div class="oppCell divTableCell droppable" id="D8"></div>
+                            <div class="oppCell divTableCell droppable" id="D9"></div>
+                            <div class="oppCell divTableCell droppable" id="D10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">E</div>
+                            <div class="oppCell divTableCell droppable" id="E1"></div>
+                            <div class="oppCell divTableCell droppable" id="E2"></div>
+                            <div class="oppCell divTableCell droppable" id="E3"></div>
+                            <div class="oppCell divTableCell droppable" id="E4"></div>
+                            <div class="oppCell divTableCell droppable" id="E5"></div>
+                            <div class="oppCell divTableCell droppable" id="E6"></div>
+                            <div class="oppCell divTableCell droppable" id="E7"></div>
+                            <div class="oppCell divTableCell droppable" id="E8"></div>
+                            <div class="oppCell divTableCell droppable" id="E9"></div>
+                            <div class="oppCell divTableCell droppable" id="E10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">F</div>
+                            <div class="oppCell divTableCell droppable" id="F1"></div>
+                            <div class="oppCell divTableCell droppable" id="F2"></div>
+                            <div class="oppCell divTableCell droppable" id="F3"></div>
+                            <div class="oppCell divTableCell droppable" id="F4"></div>
+                            <div class="oppCell divTableCell droppable" id="F5"></div>
+                            <div class="oppCell divTableCell droppable" id="F6"></div>
+                            <div class="oppCell divTableCell droppable" id="F7"></div>
+                            <div class="oppCell divTableCell droppable" id="F8"></div>
+                            <div class="oppCell divTableCell droppable" id="F9"></div>
+                            <div class="oppCell divTableCell droppable" id="F10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">G</div>
+                            <div class="oppCell divTableCell droppable" id="G1"></div>
+                            <div class="oppCell divTableCell droppable" id="G2"></div>
+                            <div class="oppCell divTableCell droppable" id="G3"></div>
+                            <div class="oppCell divTableCell droppable" id="G4"></div>
+                            <div class="oppCell divTableCell droppable" id="G5"></div>
+                            <div class="oppCell divTableCell droppable" id="G6"></div>
+                            <div class="oppCell divTableCell droppable" id="G7"></div>
+                            <div class="oppCell divTableCell droppable" id="G8"></div>
+                            <div class="oppCell divTableCell droppable" id="G9"></div>
+                            <div class="oppCell divTableCell droppable" id="G10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">H</div>
+                            <div class="oppCell divTableCell droppable" id="H1"></div>
+                            <div class="oppCell divTableCell droppable" id="H2"></div>
+                            <div class="oppCell divTableCell droppable" id="H3"></div>
+                            <div class="oppCell divTableCell droppable" id="H4"></div>
+                            <div class="oppCell divTableCell droppable" id="H5"></div>
+                            <div class="oppCell divTableCell droppable" id="H6"></div>
+                            <div class="oppCell divTableCell droppable" id="H7"></div>
+                            <div class="oppCell divTableCell droppable" id="H8"></div>
+                            <div class="oppCell divTableCell droppable" id="H9"></div>
+                            <div class="oppCell divTableCell droppable" id="H10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">I</div>
+                            <div class="oppCell divTableCell droppable" id="I1"></div>
+                            <div class="oppCell divTableCell droppable" id="I2"></div>
+                            <div class="oppCell divTableCell droppable" id="I3"></div>
+                            <div class="oppCell divTableCell droppable" id="I4"></div>
+                            <div class="oppCell divTableCell droppable" id="I5"></div>
+                            <div class="oppCell divTableCell droppable" id="I6"></div>
+                            <div class="oppCell divTableCell droppable" id="I7"></div>
+                            <div class="oppCell divTableCell droppable" id="I8"></div>
+                            <div class="oppCell divTableCell droppable" id="I9"></div>
+                            <div class="oppCell divTableCell droppable" id="I10"></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">J</div>
+                            <div class="oppCell divTableCell droppable" id="J1"></div>
+                            <div class="oppCell divTableCell droppable" id="J2"></div>
+                            <div class="oppCell divTableCell droppable" id="J3"></div>
+                            <div class="oppCell divTableCell droppable" id="J4"></div>
+                            <div class="oppCell divTableCell droppable" id="J5"></div>
+                            <div class="oppCell divTableCell droppable" id="J6"></div>
+                            <div class="oppCell divTableCell droppable" id="J7"></div>
+                            <div class="oppCell divTableCell droppable" id="J8"></div>
+                            <div class="oppCell divTableCell droppable" id="J9"></div>
+                            <div class="oppCell divTableCell droppable" id="J10"></div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+                <div class="col-12">
+                    <div id="salvoBlock">
+
+                    </div>
+                </div>
+                <!--// table end //-->
+            </div>
+
+
+
+            </div>
+
             <!-- Grilla de barcos de player1-->
             <div class="col-sm-6">
-                <div class="textCenter player1 rounded border border-warning">
+                <div class="m-2 textCenter player1 rounded border border-warning">
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center">
@@ -102,14 +316,14 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                <div id="shipsLeftIcons" class="textCenter">
-                    <!--<span id="carrierIcon"><img src="img/carrierafloat.png"></span>
+
+                <!--<div id="shipsLeftIcons" class="textCenter">
+                    <span id="carrierIcon"><img src="img/carrierafloat.png"></span>
                     <span id="battleshipIcon"><img src="img/battleshipafloat.png"></span>
                     <span id="submarineIcon"><img src="img/submarineafloat.png"></span>
                     <span id="destoyerIcon"><img src="img/destroyerafloat.png"></span>
-                    <span id="patrolboatIcon"><img src="img/patrolboatafloat.png"></span>-->
-                </div>
+                    <span id="patrolboatIcon"><img src="img/patrolboatafloat.png"></span>
+                </div>-->
 
                 <div class="divTable selfTable">
                     <div class="divTableBody">
@@ -259,194 +473,10 @@
                         </div>
                     </div>
                 </div>
-                <br>
+
                 <!--// table end //-->
             </div>
 
-
-            <!-- Grilla de barcos de Player2-->
-            <div class="col-sm-6">
-                <div class="textCenter player2 rounded border border-warning">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="textCenter">
-                                <h4 class="textCenter" id="OpponentPlayerName"></h4>
-                            </div>
-                        </div>
-                        <!--<div class="col-6">
-                            <div class="float-left">
-                                <h4 class="gridTopLabel"> Player Ships</h4>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-                <br>
-                    <!--<div id="shipsLeftIconsOpp" class="textCenter">
-                        <span id="oppcarrierIcon"><img src="img/carrierafloat.png"></span>
-                        <span id="oppbattleshipIcon"><img src="img/battleshipafloat.png"></span>
-                        <span id="oppsubmarineIcon"><img src="img/submarineafloat.png"></span>
-                        <span id="oppdestoyerIcon"><img src="img/destroyerafloat.png"></span>
-                        <span id="opppatrolboatIcon"><img src="img/patrolboatafloat.png"></span>
-                    </div>-->
-
-                    <div class="divTable oppTable">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell"></div>
-                                <div class="divTableCell">1</div>
-                                <div class="divTableCell">2</div>
-                                <div class="divTableCell">3</div>
-                                <div class="divTableCell">4</div>
-                                <div class="divTableCell">5</div>
-                                <div class="divTableCell">6</div>
-                                <div class="divTableCell">7</div>
-                                <div class="divTableCell">8</div>
-                                <div class="divTableCell">9</div>
-                                <div class="divTableCell">10</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">A</div>
-                                <div class="oppCell divTableCell droppable" id="A1"></div>
-                                <div class="oppCell divTableCell droppable" id="A2"></div>
-                                <div class="oppCell divTableCell droppable" id="A3"></div>
-                                <div class="oppCell divTableCell droppable" id="A4"></div>
-                                <div class="oppCell divTableCell droppable" id="A5"></div>
-                                <div class="oppCell divTableCell droppable" id="A6"></div>
-                                <div class="oppCell divTableCell droppable" id="A7"></div>
-                                <div class="oppCell divTableCell droppable" id="A8"></div>
-                                <div class="oppCell divTableCell droppable" id="A9"></div>
-                                <div class="oppCell divTableCell droppable" id="A10"></div>
-
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">B</div>
-                                <div class="oppCell divTableCell droppable" id="B1"></div>
-                                <div class="oppCell divTableCell droppable" id="B2"></div>
-                                <div class="oppCell divTableCell droppable" id="B3"></div>
-                                <div class="oppCell divTableCell droppable" id="B4"></div>
-                                <div class="oppCell divTableCell droppable" id="B5"></div>
-                                <div class="oppCell divTableCell droppable" id="B6"></div>
-                                <div class="oppCell divTableCell droppable" id="B7"></div>
-                                <div class="oppCell divTableCell droppable" id="B8"></div>
-                                <div class="oppCell divTableCell droppable" id="B9"></div>
-                                <div class="oppCell divTableCell droppable" id="B10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">C</div>
-                                <div class="oppCell divTableCell droppable" id="C1"></div>
-                                <div class="oppCell divTableCell droppable" id="C2"></div>
-                                <div class="oppCell divTableCell droppable" id="C3"></div>
-                                <div class="oppCell divTableCell droppable" id="C4"></div>
-                                <div class="oppCell divTableCell droppable" id="C5"></div>
-                                <div class="oppCell divTableCell droppable" id="C6"></div>
-                                <div class="oppCell divTableCell droppable" id="C7"></div>
-                                <div class="oppCell divTableCell droppable" id="C8"></div>
-                                <div class="oppCell divTableCell droppable" id="C9"></div>
-                                <div class="oppCell divTableCell droppable" id="C10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">D</div>
-                                <div class="oppCell divTableCell droppable" id="D1"></div>
-                                <div class="oppCell divTableCell droppable" id="D2"></div>
-                                <div class="oppCell divTableCell droppable" id="D3"></div>
-                                <div class="oppCell divTableCell droppable" id="D4"></div>
-                                <div class="oppCell divTableCell droppable" id="D5"></div>
-                                <div class="oppCell divTableCell droppable" id="D6"></div>
-                                <div class="oppCell divTableCell droppable" id="D7"></div>
-                                <div class="oppCell divTableCell droppable" id="D8"></div>
-                                <div class="oppCell divTableCell droppable" id="D9"></div>
-                                <div class="oppCell divTableCell droppable" id="D10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">E</div>
-                                <div class="oppCell divTableCell droppable" id="E1"></div>
-                                <div class="oppCell divTableCell droppable" id="E2"></div>
-                                <div class="oppCell divTableCell droppable" id="E3"></div>
-                                <div class="oppCell divTableCell droppable" id="E4"></div>
-                                <div class="oppCell divTableCell droppable" id="E5"></div>
-                                <div class="oppCell divTableCell droppable" id="E6"></div>
-                                <div class="oppCell divTableCell droppable" id="E7"></div>
-                                <div class="oppCell divTableCell droppable" id="E8"></div>
-                                <div class="oppCell divTableCell droppable" id="E9"></div>
-                                <div class="oppCell divTableCell droppable" id="E10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">F</div>
-                                <div class="oppCell divTableCell droppable" id="F1"></div>
-                                <div class="oppCell divTableCell droppable" id="F2"></div>
-                                <div class="oppCell divTableCell droppable" id="F3"></div>
-                                <div class="oppCell divTableCell droppable" id="F4"></div>
-                                <div class="oppCell divTableCell droppable" id="F5"></div>
-                                <div class="oppCell divTableCell droppable" id="F6"></div>
-                                <div class="oppCell divTableCell droppable" id="F7"></div>
-                                <div class="oppCell divTableCell droppable" id="F8"></div>
-                                <div class="oppCell divTableCell droppable" id="F9"></div>
-                                <div class="oppCell divTableCell droppable" id="F10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">G</div>
-                                <div class="oppCell divTableCell droppable" id="G1"></div>
-                                <div class="oppCell divTableCell droppable" id="G2"></div>
-                                <div class="oppCell divTableCell droppable" id="G3"></div>
-                                <div class="oppCell divTableCell droppable" id="G4"></div>
-                                <div class="oppCell divTableCell droppable" id="G5"></div>
-                                <div class="oppCell divTableCell droppable" id="G6"></div>
-                                <div class="oppCell divTableCell droppable" id="G7"></div>
-                                <div class="oppCell divTableCell droppable" id="G8"></div>
-                                <div class="oppCell divTableCell droppable" id="G9"></div>
-                                <div class="oppCell divTableCell droppable" id="G10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">H</div>
-                                <div class="oppCell divTableCell droppable" id="H1"></div>
-                                <div class="oppCell divTableCell droppable" id="H2"></div>
-                                <div class="oppCell divTableCell droppable" id="H3"></div>
-                                <div class="oppCell divTableCell droppable" id="H4"></div>
-                                <div class="oppCell divTableCell droppable" id="H5"></div>
-                                <div class="oppCell divTableCell droppable" id="H6"></div>
-                                <div class="oppCell divTableCell droppable" id="H7"></div>
-                                <div class="oppCell divTableCell droppable" id="H8"></div>
-                                <div class="oppCell divTableCell droppable" id="H9"></div>
-                                <div class="oppCell divTableCell droppable" id="H10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">I</div>
-                                <div class="oppCell divTableCell droppable" id="I1"></div>
-                                <div class="oppCell divTableCell droppable" id="I2"></div>
-                                <div class="oppCell divTableCell droppable" id="I3"></div>
-                                <div class="oppCell divTableCell droppable" id="I4"></div>
-                                <div class="oppCell divTableCell droppable" id="I5"></div>
-                                <div class="oppCell divTableCell droppable" id="I6"></div>
-                                <div class="oppCell divTableCell droppable" id="I7"></div>
-                                <div class="oppCell divTableCell droppable" id="I8"></div>
-                                <div class="oppCell divTableCell droppable" id="I9"></div>
-                                <div class="oppCell divTableCell droppable" id="I10"></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">J</div>
-                                <div class="oppCell divTableCell droppable" id="J1"></div>
-                                <div class="oppCell divTableCell droppable" id="J2"></div>
-                                <div class="oppCell divTableCell droppable" id="J3"></div>
-                                <div class="oppCell divTableCell droppable" id="J4"></div>
-                                <div class="oppCell divTableCell droppable" id="J5"></div>
-                                <div class="oppCell divTableCell droppable" id="J6"></div>
-                                <div class="oppCell divTableCell droppable" id="J7"></div>
-                                <div class="oppCell divTableCell droppable" id="J8"></div>
-                                <div class="oppCell divTableCell droppable" id="J9"></div>
-                                <div class="oppCell divTableCell droppable" id="J10"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div id="salvoBlock">
-
-                </div>
-                    <!--// table end //-->
-
-
-
-
-                </div>
         </div>
         <!-- Tablas-->
             <div id="gameRecordBlock">
