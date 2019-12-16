@@ -21,15 +21,35 @@ $('#login-form').on('submit', function (event) {
                 password: $("#password").val() })
             .done(function() {
                 console.log("login ok");
-                $('#loginSuccess').show( "slow" ).delay(2000).hide( "slow" );
+                //$('#loginSuccess').show( "slow" ).delay(2000).hide( "slow" );
                 // $("#username").val("");
+                $("#loginSuccess").show(function(){
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Welcome',
+                        text: 'Login Successful!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                });
+
                 $("#password").val("");
                 updateJson();
 
             })
             .fail(function() {
                 console.log("login failed");
-                $('#loginFailed').show( "slow" ).delay(2000).hide( "slow" );
+                //$('#loginFailed').show( "slow" ).delay(2000).hide( "slow" );
+                $("#loginFailed").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'error',
+                      title: 'Login failed',
+                      text: 'Bad credentials!',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
                 $("#username").val("");
                 $("#password").val("");
                 $("#username").focus();
@@ -46,7 +66,17 @@ $('#login-form').on('submit', function (event) {
             .done(function(data) {
                 console.log("signup ok");
                 console.log(data);
-                $('#signupSuccess').show( "slow" ).delay(2000).hide( "slow" );
+                //$('#signupSuccess').show( "slow" ).delay(2000).hide( "slow" );
+                $("#signupSuccess").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'success',
+                      title: 'Player created Successfully!',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
+
                 $.post("/api/login",
                     { username: $("#username").val(),
                         password: $("#password").val() })
@@ -77,7 +107,18 @@ $('#login-form').on('submit', function (event) {
                 $("#password").val("");
                 $("#username").focus();
                 $('#errorSignup').text(data.responseJSON.error);
-                $('#errorSignup').show( "slow" ).delay(3000).hide( "slow" );
+                //$('#errorSignup').show( "slow" ).delay(3000).hide( "slow" );
+                $("#errorSignup").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'error',
+                      title: 'Sing Up failed',
+                      text: 'Bad credentials!',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
+
             })
             .always(function() {
 
@@ -94,7 +135,17 @@ $('#logout-form').on('submit', function (event) {
         $.post("/api/logout")
             .done(function () {
                 console.log("logout ok");
-                $('#logoutSuccess').show("slow").delay(2000).hide("slow");
+                //$('#logoutSuccess').show("slow").delay(2000).hide("slow");
+                $("#logoutSuccess").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'success',
+                      title: 'Logout Success',
+                      text: 'Come back soon!',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
                 updateJson();
             })
             .fail(function () {
@@ -112,7 +163,17 @@ $('#createGame').on('submit', function (event) {
             console.log(data);
             console.log("game created");
             gameViewUrl = "/web/game.html?gp=" + data.gpid;
-            $('#gameCreatedSuccess').show("slow").delay(2000).hide("slow");
+            //$('#gameCreatedSuccess').show("slow").delay(2000).hide("slow");
+            $("#gameCreatedSuccess").show(function(){
+                Swal.fire({
+                  //position: 'top-start', //permite "top-end"
+                  type: 'success',
+                  title: 'Game Created Successfully!',
+                  text: 'Redirecting to Game Page...',
+                  showConfirmButton: false,
+                  timer: 2000 //el tiempo que dura el mensaje en ms
+                });
+            });
             setTimeout(
                 function()
                 {
@@ -233,7 +294,17 @@ function showGamesTable(gamesData) {
                 console.log(data);
                 console.log("game joined");
                 gameViewUrl = "/web/game.html?gp=" + data.gpid;
-                $('#gameJoinedSuccess').show("slow").delay(2000).hide("slow");
+                //$('#gameJoinedSuccess').show("slow").delay(2000).hide("slow");
+                $("#gameJoinedSuccess").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'success',
+                      title: 'Game Joined Successfully!',
+                      text: 'Redirecting to Game Page...',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
                 setTimeout(
                    function()
                   {

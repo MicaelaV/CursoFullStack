@@ -21,12 +21,22 @@ $('#logoutButton').on('click', function (event) {
     $.post("/api/logout")
         .done(function () {
             console.log("logout ok");
-            $('#logoutSuccess').show("slow").delay(2000).hide("slow");
+            //$('#logoutSuccess').show("slow").delay(2000).hide("slow");
+                $("#logoutSuccess").show(function(){
+                    Swal.fire({
+                      //position: 'top-start', //permite "top-end"
+                      type: 'success',
+                      title: 'Logout Success',
+                      text: 'Come back soon!',
+                      showConfirmButton: false,
+                      timer: 2000 //el tiempo que dura el mensaje en ms
+                    });
+                });
             setTimeout(
                 function()
                 {
                     location.href = "/web/games.html";
-                }, 3000);
+                }, 2500);
         })
         .fail(function () {
             console.log("logout fails");
@@ -166,8 +176,17 @@ function refreshGameView(_url) {
                 $('#postSalvo').click(function () {
                     makeSalvoJSON();
                     if (salvoPositions.length === 0){
-                        $('#errorSalvo').text("Error! No salvos to fire! You must set at least one target!");
-                        $('#errorSalvo').show( "slow" ).delay(3000).hide( "slow" );
+
+                        //$('#errorSalvo').text("Error! No salvos to fire! You must set at least one target!");
+                        //$('#errorSalvo').show( "slow" ).delay(3000).hide( "slow" );
+                        $("#errorSalvo").show(function(){
+                            Swal.fire({
+                                //error
+                                type: 'error',
+                                title: 'Error',
+                                text: 'Error! No salvos to fire! You must set at least one target!',
+                            });
+                        });
                         console.log("No salvos to shoot!");
                     } else {
                         postSalvo(makePostUrlSalvoes());
@@ -328,8 +347,15 @@ function postShipLocations (postUrl) {
     })
         .done(function (response) {
             console.log(response);
-            $('#okShips').text(JSON.parse(response).OK);
-            $('#okShips').show( "slow" ).delay(3000).hide( "slow" );
+            //$('#okShips').text(JSON.parse(response).OK);
+            //$('#okShips').show( "slow" ).delay(3000).hide( "slow" );
+            $("#okShips").show(function(){
+                Swal.fire({
+                    type: 'success',
+                    //title: 'Éxito',
+                    text: 'Ships Created!!',
+                });
+            });
             setTimeout(
                 function()
                 {
@@ -356,7 +382,20 @@ function postSalvo (postUrl) {
         .done(function (response) {
             console.log(response);
             $('#okSalvo').text(JSON.parse(response).OK);
-            $('#okSalvo').show( "slow" ).delay(3000).hide( "slow" );
+            //$('#okSalvo').show( "slow" ).delay(3000).hide( "slow" );
+            $("#okSalvo").show(function(){
+
+            Swal.fire({
+              title: 'FIRE!',
+              //text: 'Modal with a custom image.',
+              imageUrl: 'img/torpedoimg.png',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Custom image',
+              showConfirmButton: false,
+              timer: 2000 //el tiempo que dura el mensaje en ms
+            })
+            });
             $('#salvoBlock').hide("slow");
             $('.oppCell').removeClass('caught--it');
             $('#salvoBlock').empty();

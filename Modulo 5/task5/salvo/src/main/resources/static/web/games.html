@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Salvo!</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/styleGames.css">
+    <meta charset="UTF-8">
+    <title>Salvo!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styleGames.css">
+    <link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="plugins/animate.css/animate.css">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -20,43 +23,21 @@
                                 <img src="img/current.png"> <span id="currentPlayer"></span>
                             </div>
                             <form class="form" id="logout-form" onsubmit="return false">
-                                <button type="submit" class="btn btn-warning">Log out</button>
+                                <button type="submit" class="btn btn-warning" id="logout-button">Log out</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="signupSuccess" class="alert alert-primary">
-            <h3 class="alert-heading">Player created Successfully!</h3>
-            <hr>
-            <p class="mb-0">Welcome to SalvoGame</p>
-        </div>
-
-        <div class="alert alert-danger" id="errorSignup">
-            <h3 class="alert-heading">Sing Up failed!</h3>
-        </div>
-
-        <div class="alert alert-success" id="loginSuccess">
-            <h3 class="alert-heading">Login Successful!</h3>
-        </div>
-
-        <div class="alert alert-success" id="logoutSuccess">
-            <h3 class="alert-heading">Logout Successful!</h3>
-        </div>
-
-        <div class="alert alert-success" id="gameCreatedSuccess">
-            <h3 class="alert-heading">Game Created Successfully! Redirecting to Game Page...</h3>
-        </div>
-
-        <div class="alert alert-success" id="gameJoinedSuccess">
-            <h3 class="alert-heading">Game Joined Successfully! Redirecting to Game Page...</h3>
-        </div>
-
-        <div class="alert alert-danger" id="loginFailed">
-            <h3 class="alert-heading">Login failed! Bad credentials!</h3>
-        </div>
+        <!-- Alerts -->
+        <div id="signupSuccess"></div>
+        <div id="errorSignup"></div>
+        <div id="loginSuccess"></div>
+        <div id="logoutSuccess"></div>
+        <div id="gameCreatedSuccess"></div>
+        <div id="gameJoinedSuccess"></div>
+        <div id="loginFailed"></div>
     </div>
 
     <section>
@@ -139,13 +120,17 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 <br>
 </div>
 
-<script src="./js/popper.min.js"></script>
-  <script src="./js/jquery-3.3.1.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/games.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!--    Plugin sweet Alert 2  -->
+    <script src="plugins/sweetAlert2/sweetalert2.all.min.js"></script>
+    <script src="./js/games.js"></script>
+
 </body>
 </html>
